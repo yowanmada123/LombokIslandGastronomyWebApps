@@ -10,7 +10,8 @@ class ViewWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth > 715 && MediaQuery.of(context).size.height >550) {
+      // if (constraints.maxWidth > 715 && MediaQuery.of(context).size.height >550) {
+      if (constraints.maxWidth > 715) {
         return desktopView;
       } else {
         return mobileView;

@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:portfolio_website/utils/content_view.dart';
 import 'package:portfolio_website/utils/tab_controller_handler.dart';
 import 'package:portfolio_website/utils/view_wrapper.dart';
-import 'package:portfolio_website/views/about_view.dart';
-import 'package:portfolio_website/views/home_view.dart';
-import 'package:portfolio_website/views/projects_view.dart';
+import 'package:portfolio_website/pages/about_view.dart';
+import 'package:portfolio_website/pages/home/home_view.dart';
+import 'package:portfolio_website/pages/projects_view.dart';
 import 'package:portfolio_website/widgets/custom_tab.dart';
 import 'package:portfolio_website/widgets/custom_tab_bar.dart';
 import 'package:portfolio_website/widgets/footbar.dart';
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage>
 
         /// Tab Bar View
         Container(
-          height: screenHeight * 0.8,
+          height: screenHeight,
           child: TabControllerHandler(
             tabController: tabController,
             child: TabBarView(
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage>
           ),
         ),
 
-        FootBar()
+        
         
       ],
     );

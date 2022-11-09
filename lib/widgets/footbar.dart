@@ -30,8 +30,8 @@ class FootBar extends StatelessWidget {
               color: ONetralBlack,
               child: Column(
                 children: [
-                  const SizedBox(
-                    height: 182,
+                  SizedBox(
+                    height: Get.height*0.24,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,24 +42,24 @@ class FootBar extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Gapulo").orelega25s().white(),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           SizedBox(
-                            width: 274,
+                            width: Get.width*0.178,
                             child: const Text("Gapulo give you a new experience on culinary through food gastronomy").nunito16s().white()),
-                          const SizedBox(
-                            height: 30,
+                          SizedBox(
+                            height: Get.height*0.04,
                           ),
                           Row(
                             children: [
                               Image.asset("assets/images/ic_fb_yellow.png"),
-                              const SizedBox(
-                                width: 11,
+                              SizedBox(
+                                width: Get.width*0.007,
                               ),
                               Image.asset("assets/images/ic_ig_yellow.png"),
-                              const SizedBox(
-                                width: 11,
+                              SizedBox(
+                                width: Get.width*0.007,
                               ),
                               Image.asset("assets/images/ic_li_yellow.png"),
 
@@ -67,69 +67,69 @@ class FootBar extends StatelessWidget {
                           )
                         ],
                       ),
-                      const SizedBox(
-                        width: 200,
+                      SizedBox(
+                        width: Get.width*0.13,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Menu").orelega25s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("Home").nunito16s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("Gastronomy").nunito16s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("Culture").nunito16s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("Tourism Village").nunito16s().white(),
                         ],
                       ),
-                      const SizedBox(
-                        width: 90,
+                      SizedBox(
+                        width: Get.width*0.058,
                       ), 
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Contact Us").orelega25s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("Gapulo.co").nunito16s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("(0822) 3153 2679").nunito16s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("Surabaya, Indonesia").nunito16s().white(),
                         ],
                       ),
-                      const SizedBox(
-                        width: 90,
-                      ),
+                      SizedBox(
+                        width: Get.width*0.058,
+                      ), 
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Social Media").orelega25s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("Facebook").nunito16s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("Instagram").nunito16s().white(),
-                          const SizedBox(
-                            height: 15,
+                          SizedBox(
+                            height: Get.height*0.02,
                           ),
                           const Text("Twitter").nunito16s().white(),
                         ],
@@ -158,8 +158,8 @@ class FootBar extends StatelessWidget {
                   "Discover New Information and Culinary Travel Experiences",
                   textAlign: TextAlign.center,
                 ).orelega50s().white(),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: Get.height*0.026,
                 ),
                 SizedBox(
                   width: 200,

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portfolio_website/utils/content_view.dart';
 import 'package:portfolio_website/utils/tab_controller_handler.dart';
 import 'package:portfolio_website/utils/view_wrapper.dart';
 import 'package:portfolio_website/views/about_view.dart';
 import 'package:portfolio_website/views/home_view.dart';
 import 'package:portfolio_website/views/projects_view.dart';
-import 'package:portfolio_website/widgets/bottom_bar.dart';
 import 'package:portfolio_website/widgets/custom_tab.dart';
 import 'package:portfolio_website/widgets/custom_tab_bar.dart';
+import 'package:portfolio_website/widgets/footbar.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 
@@ -19,15 +20,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  TabController tabController;
-  ItemScrollController itemScrollController;
+  late TabController tabController;
+  late ItemScrollController itemScrollController;
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
-  double screenHeight;
-  double screenWidth;
-  double topPadding;
-  double bottomPadding;
-  double sidePadding;
+  late double screenHeight;
+  late double screenWidth;
+  // late double topPadding;
+  // late double bottomPadding;
+  // late double sidePadding;
 
   List<ContentView> contentViews = [
     ContentView(
@@ -35,12 +36,21 @@ class _HomePageState extends State<HomePage>
       content: HomeView(),
     ),
     ContentView(
-      tab: CustomTab(title: 'About'),
+      tab: CustomTab(title: 'Gastronomy'),
       content: AboutView(),
     ),
     ContentView(
-      tab: CustomTab(title: 'Projects'),
+      tab: CustomTab(title: 'Culture'),
       content: ProjectsView(),
+    ),
+    ContentView(
+      tab: CustomTab(title: 'Reference Village'),
+      content: ProjectsView(),
+    ),
+    ContentView(
+      tab: CustomTab(title: 'About'),
+      content: ProjectsView(),
+      
     )
   ];
 
@@ -53,34 +63,30 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
-    topPadding = screenHeight * 0.05;
-    bottomPadding = screenHeight * 0.03;
-    sidePadding = screenWidth * 0.05;
+    screenWidth = Get.width;
+    screenHeight = Get.height;
+    // topPadding = screenHeight * 0.05;
+    // bottomPadding = screenHeight * 0.03;
+    // sidePadding = screenWidth * 0.05;
 
     print('Width: $screenWidth');
     print('Height: $screenHeight');
     return Scaffold(
-      backgroundColor: Color(0xff1e1e24),
+      backgroundColor: Colors.white,
       key: scaffoldKey,
-      endDrawer: drawer(),
-      body: Padding(
-        padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
-        child:
-        ViewWrapper(desktopView: desktopView(), mobileView: mobileView()),
-      ),
+      // endDrawer: drawer(),
+      body: ViewWrapper(desktopView: desktopView(), mobileView: mobileView()),
     );
   }
 
   Widget desktopView() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.end,
+    return ListView(
+      // mainAxisAlignment: MainAxisAlignment.start,
+      // crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         /// Tab Bar
         Container(
-          height: screenHeight * 0.05,
+          height: 60,
           child: CustomTabBar(
               controller: tabController,
               tabs: contentViews.map((e) => e.tab).toList()),
@@ -98,15 +104,15 @@ class _HomePageState extends State<HomePage>
           ),
         ),
 
-        /// Bottom Bar
-        BottomBar()
+        FootBar()
+        
       ],
     );
   }
 
   Widget mobileView() {
     return Padding(
-      padding: EdgeInsets.only(left: sidePadding, right: sidePadding),
+      padding: EdgeInsets.symmetric(horizontal: Get.width*0.1),
       child: Container(
         width: screenWidth,
         child: Column(
@@ -118,7 +124,7 @@ class _HomePageState extends State<HomePage>
                 icon: Icon(Icons.menu_rounded),
                 color: Colors.white,
                 splashColor: Colors.transparent,
-                onPressed: () => scaffoldKey.currentState.openEndDrawer()),
+                onPressed: () => scaffoldKey.currentState!.openEndDrawer()),
             Expanded(
               child: ScrollablePositionedList.builder(
                 scrollDirection: Axis.vertical,

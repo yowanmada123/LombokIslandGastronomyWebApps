@@ -4,7 +4,7 @@ import 'package:portfolio_website/utils/theme_selector.dart';
 
 
 class ProjectEntry extends StatelessWidget {
-  const ProjectEntry({Key key, @required this.project})
+  const ProjectEntry({Key? key, required this.project})
       : super(key: key);
   final Project project;
 

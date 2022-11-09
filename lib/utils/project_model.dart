@@ -1,8 +1,8 @@
 class Project {
   Project({
-    this.title,
-    this.description,
-    this.imageURL
+    required this.title,
+    required this.description,
+    required this.imageURL
   });
 
   final String title;

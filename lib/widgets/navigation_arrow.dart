@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/utils/tab_controller_handler.dart';
 
 class NavigationArrow extends StatelessWidget {
-  const NavigationArrow({Key key, @required this.isBackArrow})
+  const NavigationArrow({Key? key, required this.isBackArrow})
       : super(key: key);
 
   final bool isBackArrow;
@@ -11,7 +10,7 @@ class NavigationArrow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TabController tabController =
-        TabControllerHandler.of(context).tabController;
+        TabControllerHandler.of(context)!.tabController;
     return Padding(
       padding: isBackArrow
           ? EdgeInsets.only(left: MediaQuery.of(context).size.width*0.01)

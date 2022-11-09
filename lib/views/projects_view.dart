@@ -7,15 +7,15 @@ import 'package:portfolio_website/widgets/project_entry.dart';
 import 'package:portfolio_website/widgets/project_image.dart';
 
 class ProjectsView extends StatefulWidget {
-  const ProjectsView({Key key}) : super(key: key);
+  const ProjectsView({Key? key}) : super(key: key);
 
   @override
   _ProjectsViewState createState() => _ProjectsViewState();
 }
 
 class _ProjectsViewState extends State<ProjectsView> {
-  double screenWidth;
-  double screenHeight;
+  late double screenWidth;
+  late double screenHeight;
   int selectedIndex = 0;
   List<Project> projects = [
     Project(

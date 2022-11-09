@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_website/widgets/bullet_point.dart';
 
 class BulletList extends StatefulWidget {
-  const BulletList({Key key, @required this.strings}) : super(key: key);
+  const BulletList({Key? key, required this.strings}) : super(key: key);
   final List<String> strings;
 
   @override
@@ -13,7 +13,7 @@ class BulletList extends StatefulWidget {
 
 class _BulletListState extends State<BulletList>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
 
   @override
   void initState() {

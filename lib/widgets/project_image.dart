@@ -4,7 +4,7 @@ import 'package:portfolio_website/utils/project_model.dart';
 
 class ProjectImage extends StatelessWidget {
   const ProjectImage(
-      {Key key, @required this.project, @required this.onPressed})
+      {Key? key, required this.project, required this.onPressed})
       : super(key: key);
   final Project project;
   final VoidCallback onPressed;
